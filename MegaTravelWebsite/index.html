@@ -7,11 +7,38 @@
     </div> 
 
     <div style="text-align: center; color:#000000; ">
-        <a href="index.html" style="margin-right: 10px; text-decoration: none; color:#000000;">Home</a>
-        <a href="about.html" style="text-decoration: none; color:#000000;">About Us</a>
-        <a href="contact.html" style="margin-left: 10px; text-decoration: none; color:#000000;">Contact Agent</a>
+        <a id= "home" onmouseover="mouseOver()" onmouseout="mouseOut()" href="index.html" style="margin-right: 10px; text-decoration: none; color:#000000;">Home</a>
+        <a id= "about" onmouseover="mouseOver()" onmouseout="mouseOut()" href="about.html" style="text-decoration: none; color:#000000;">About Us</a>
+        <a id= "contact" onmouseover="mouseOver()" onmouseout="mouseOut()" href="contact.html" style="margin-left: 10px; text-decoration: none; color:#000000;">Contact Agent</a>
     </div>
 
+    <script>
+        function mouseOver() {
+            document.getElementById("home").style.color = "red";
+        }
+
+        function mouseOut() {
+            document.getElementById("home").style.color = "black";
+        }
+    </script>
+    <script>
+        function mouseOver() {
+            document.getElementById("about").style.color = "red";
+        }
+
+        function mouseOut() {
+            document.getElementById("about").style.color = "black";
+        }
+    </script>
+    <script>
+        function mouseOver() {
+            document.getElementById("contact").style.color = "red";
+        }
+
+        function mouseOut() {
+            document.getElementById("contact").style.color = "black";
+        }
+    </script>
     <style>
         .footer {
            position: fixed;
@@ -25,6 +52,9 @@
         }
     </style>
     
+    <h3 style="margin-left: 15px;">Travel Packages</h3>
+    <p style="width: 700px;height: 50px;margin-left:15px;">We are specialized with International Travels and Tours.  Our expertized and experience can save you 100's of dollars in your pocket.  Beside the money you can save your valuable time at the time of transit or tour.  You decide your budget and the time from your comfort zone.  We will make it happen for you for an exceptional memory.  Mega Travels is committed for an excellent service and support for all of its past, present, and future customers.  We are here today only for you.  We remind ourself everyday and every moment with sincere gratitiude.</p>
+
     <div class="footer">
         <p>Copyright Protected. All rights reserved.</p>
         <p>MEGA TRAVELS</p>
