@@ -1,3 +1,7 @@
-function myFunction(){
-    alert("hello");
+function showResults(selectedObject) {
+
+    document.getElementById("result");
+    
+
+    
 }
