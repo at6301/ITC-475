@@ -4,21 +4,21 @@ function showResults(selectedObject) {
    let veniceDiv = document.getElementById("veniceDiv");
    let cancunDiv = document.getElementById("cancunDiv");
 
-   newZealDiv.style.visibility = 'hidden';
-   maldivesDiv.style.visibility = 'hidden';
-   veniceDiv.style.visibility = 'hidden';
-   cancunDiv.style.visibility = 'hidden';
+   newZealDiv.style.display= 'none';
+   maldivesDiv.style.display= 'none';
+   veniceDiv.style.display= 'none';
+   cancunDiv.style.display= 'none';
 
    if(selectedObject == "New Zealand"){
-    newZealDiv.style.visibility = 'visible';
+    newZealDiv.style.display= 'block';
    }
    else if(selectedObject == "Maldives, South Asia"){
-    maldivesDiv.style.visibility = 'visible';
+    maldivesDiv.style.display= 'block';
    }
    else if(selectedObject == "Venice, Italy"){
-    veniceDiv.style.visibility = 'visible';
+    veniceDiv.style.display= 'block';
    }
    else if(selectedObject == "Cancun"){
-    cancunDiv.style.visibility = 'visible';
+    cancunDiv.style.display= 'block';
    }
 }

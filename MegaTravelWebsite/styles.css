@@ -97,6 +97,30 @@ footer {
     padding: 10px;
 }
 
+.location{
+    margin-bottom: 10px;
+}
+
+.newZealDiv {
+    display: none;
+    margin-left: 10px;
+}
+
+.maldivesDiv {
+    display: none;
+    margin-left: 10px;
+}
+
+.veniceDiv {
+    display: none;
+    margin-left: 10px;
+}
+
+.cancunDiv {
+    display: none;
+    margin-left: 10px;
+}
+
 @media only screen and (min-width: 575px) {
     header {
         text-align: left;
