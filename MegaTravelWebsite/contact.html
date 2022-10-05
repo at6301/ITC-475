@@ -23,7 +23,27 @@
             </div>
             <div name="contact-agent" class="contact-agent">
                 <form id="reservationForm">
-                    <select id="location" class="location" name="location" style="margin-left: 10px;" onchange="showResults(this.options[this.selectedIndex].value)">
+                    <div id="customerInfoDiv" class="customerInfoDiv">
+                        <label for="fname">First name:</label><br>
+                        <input type="text" id="fname" name="fname"><br>
+                        <label for="lname">Last name:</label><br>
+                        <input type="text" id="lname" name="lname"><br>
+                        <label for="email">Email Adress:</label><br>
+                        <input type="email" id="email" name="email"><br>
+                        <label for="phoneNum">Phone Number:</label><br>
+                        <input type="text" id="phoneNum" name="phoneNum"><br>
+                        <label for="adults">Number of adults traveling:</label><br>
+                        <input type="number" id="adults" name="adults" min="0"><br>
+                        <label for="children">Number of children traveling:</label><br>
+                        <input type="number" id="children" name="children" min="0"><br>
+                        <label for="dateStart">Enter a travel start date:</label><br>
+                        <input type="date" id="dateStart" name="dateStart"><br><br>
+                        <label for="dateEnd">Enter a return travel date:</label><br>
+                        <input type="date" id="dateEnd" name="dateEnd"><br>
+                        <input type="submit" value="Submit" style="margin-left: 10px; margin-bottom: 20px;" />
+                        <input type="reset" value="Clear" style="margin-left: 10px; margin-bottom: 20px;" />
+                    </div>
+                    <select id="location" class="location" name="location" style="margin-left: 10px; font-size: medium;" onchange="showResults(this.options[this.selectedIndex].value)">
                         <option hidden="" disabled="disabled" selected="selected" value="none">Select a Destination</option>
                         <option value="New Zealand">New Zealand</option>
                         <option value="Maldives, South Asia">Maldives, South Asia</option>
@@ -63,6 +83,7 @@
                         <input type="checkbox" name="activity" value="Snorkeling">Snorkeling<br>
                         <br>
                         <input type="submit" value="Submit Activites" style="margin-left: 10px; margin-bottom: 20px;" />
+                        <input type="reset" value="Clear" style="margin-left: 10px; margin-bottom: 20px;" />
                     </div>
                 </form>
             </div>
