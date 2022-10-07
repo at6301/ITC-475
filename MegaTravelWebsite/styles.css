@@ -102,29 +102,78 @@ footer {
     margin-bottom: 10px;
 }
 
-.location{
-    margin-bottom: 10px;
+#fname {
+    width: 25%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+#lname {
+    width: 25%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+ }
+
+#email {
+    width: 25%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+ #phoneNum {
+    width: 25%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+#adults {
+    width: 25%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+#children {
+    width: 25%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+#dateStart {
+    width: 25%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+#dateEnd {
+    width: 25%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
 .newZealDiv {
     display: none;
-    margin-left: 10px;
-}
-
-.maldivesDiv {
+ }
+  
+ .maldivesDiv {
     display: none;
-    margin-left: 10px;
-}
-
-.veniceDiv {
+ }
+  
+ .veniceDiv {
     display: none;
-    margin-left: 10px;
-}
-
-.cancunDiv {
+ }
+  
+ .cancunDiv {
     display: none;
-    margin-left: 10px;
-}
+ }
+ 
 
 @media only screen and (min-width: 575px) {
     header {
