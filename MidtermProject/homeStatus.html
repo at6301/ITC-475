@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html style="background-color: lightblue;">
+    <head>
+        <title>Smart Home</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <script>
+            var url = window.location.search;
+            var livingRoomLampStart = url.substring(url.indexOf('livingRoomLampStart=')+20, url.indexOf('livingRoomLampEnd=')-1);
+            var livingRoomLampEnd = url.substring(url.indexOf('livingRoomLampEnd=')+18, url.indexOf('bed1LampStart=')-1);
+
+            alert(livingRoomLampStart);
+            alert(livingRoomLampEnd);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

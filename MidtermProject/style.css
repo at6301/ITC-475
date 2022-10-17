@@ -1,0 +1,21 @@
+.header {
+    font-family: Verdana;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.homePanel {
+    font-family: Verdana;
+    display:flex;
+    justify-content: center;
+}
+
+.devices {
+    margin-top: 10px;
+    font-size: medium; 
+    font-family: Verdana;
+    display:flex;
+    justify-content: center;
+}
+
