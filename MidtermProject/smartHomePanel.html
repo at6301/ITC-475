@@ -10,12 +10,97 @@
             </ul>
         </nav>
         <main>
+            <script>
+                function setDevice() {
+                    var select = document.getElementById('devices');
+                    var value = select.options[select.selectedIndex].value;
+
+                    var livingRoomDiv = document.getElementById('livingRoomDiv');
+                    var bed1LampDiv = document.getElementById('bed1LampDiv');
+                    var bed2LampDiv = document.getElementById('bed2LampDiv');
+                    var bathroomFanDiv = document.getElementById('bathroomFanDiv');
+                    var washerDiv = document.getElementById('washerDiv');
+                    var dryerDiv = document.getElementById('dryerDiv');
+                    var frontDoorDiv = document.getElementById('frontDoorDiv');
+                    var backDoorDiv = document.getElementById('backDoorDiv');
+                    var garageDoorDiv = document.getElementById('garageDoorDiv');
+                    var kitchenFanDiv = document.getElementById('kitchenFanDiv');
+                    var diningLightDiv = document.getElementById('diningLightDiv');
+
+                    if(value == 'livingRoom') {
+                        livingRoomDiv.style.display = "block";
+                    }
+                    else {
+                        livingRoomDiv.style.display = "none";
+                    }
+                    if(value == 'bed1Lamp') {
+                        bed1LampDiv.style.display = "block";
+                    }
+                    else {
+                        bed1LampDiv.style.display = "none";
+                    }
+                    if(value == 'bed2Lamp') {
+                        bed2LampDiv.style.display = "block";
+                    }
+                    else {
+                        bed2LampDiv.style.display = "none";
+                    }
+                    if(value == 'bathroomFan') {
+                        bathroomFanDiv.style.display = "block";
+                    }
+                    else {
+                        bathroomFanDiv.style.display = "none";
+                    }
+                    if(value == 'washer') {
+                        washerDiv.style.display = "block";
+                    }
+                    else {
+                        washerDiv.style.display = "none";
+                    }
+                    if(value == 'dryer') {
+                        dryerDiv.style.display = "block";
+                    }
+                    else {
+                        dryerDiv.style.display = "none";
+                    }
+                    if(value == 'frontDoor') {
+                        frontDoorDiv.style.display = "block";
+                    }
+                    else {
+                        frontDoorDiv.style.display = "none";
+                    }
+                    if(value == 'backDoor') {
+                        backDoorDiv.style.display = "block";
+                    }
+                    else {
+                        backDoorDiv.style.display = "none";
+                    }
+                    if(value == 'garageDoor') {
+                        garageDoorDiv.style.display = "block";
+                    }
+                    else {
+                        garageDoorDiv.style.display = "none";
+                    }
+                    if(value == 'kitchenFan') {
+                        kitchenFanDiv.style.display = "block";
+                    }
+                    else {
+                        kitchenFanDiv.style.display = "none";
+                    }
+                    if(value == 'diningLight') {
+                        diningLightDiv.style.display = "block";
+                    }
+                    else {
+                        diningLightDiv.style.display = "none";
+                    }
+                }
+            </script>
             <div name="homePanel" class="homePanel">
                 <form name="panelForm" id="panelForm" onsubmit="return validateForm();" method="post">
                     <div id="panelDiv" class="panelDiv">
-                        <select id="devices" class="devices" name="devices" style="margin-top: 10px; font-size: medium;" onchange="showResults(this.options[this.selectedIndex].value)">
+                        <select id="devices" class="devices" name="devices" style="margin-top: 10px; font-size: medium;" onchange="setDevice()">
                             <option hidden="" disabled="disabled" selected="selected" value="none">Select a Smart Home Device</option>
-                            <option value="livingRoomLamp">Living Room Lamp</option>
+                            <option value="livingRoom">Living Room Lamp</option>
                             <option value="bed1Lamp">Bedroom #1 Desk Lamp</option>
                             <option value="bed2Lamp">Bedroom #2 Floor Lamp</option>
                             <option value="bathroomFan">Bathroom Fan</option>
