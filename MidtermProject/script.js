@@ -81,3 +81,4 @@ function setDevice() {
         diningLightDiv.style.display = "none";
     }
 }
+

@@ -5,14 +5,250 @@
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
         <script>
-            var url = window.location.search;
-            var livingRoomLampStart = url.substring(url.indexOf('livingRoomLampStart=')+20, url.indexOf('livingRoomLampEnd=')-1);
-            var livingRoomLampEnd = url.substring(url.indexOf('livingRoomLampEnd=')+18, url.indexOf('bed1LampStart=')-1);
+            function refreshStatus() {
+                
+                var currentDate = new Date();
+                var currentTime = currentDate.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+                var url = decodeURIComponent(window.location.search);
 
-            alert(livingRoomLampStart);
-            alert(livingRoomLampEnd);
+                // Refresh my clock
+                document.getElementById("myClock").innerHTML = currentTime;
+
+                // Check living room lamp status
+                var livingRoomLampStart = url.substring(url.indexOf('livingRoomLampStart=')+20, url.indexOf('livingRoomLampEnd=')-1);
+                var livingRoomLampEnd = url.substring(url.indexOf('livingRoomLampEnd=')+18, url.indexOf('bed1LampStart=')-1);
+                if(livingRoomLampStart == '' || livingRoomLampEnd == '') {
+                    document.getElementById("livingRoomLampStatus").innerHTML = "The living room lamp is not configured!"
+                }
+                else {
+                    
+                    var startLivingRoomLamp = new Date();
+                    startLivingRoomLamp.setHours(livingRoomLampStart.substring(0, 2), livingRoomLampStart.substring(3, 5), 0);
+                    var endLivingRoomLamp = new Date();
+                    endLivingRoomLamp.setHours(livingRoomLampEnd.substring(0, 2), livingRoomLampEnd.substring(3, 5), 0);
+                    if(currentDate >= startLivingRoomLamp && currentDate <= endLivingRoomLamp) {
+                        document.getElementById("livingRoomLampStatus").innerHTML = "The living room lamp is on!"
+                    }
+                    else {
+                        document.getElementById("livingRoomLampStatus").innerHTML = "The living room lamp is off!"
+                    }
+                }
+
+                // Check bed 1 lamp status
+                var bed1LampStart = url.substring(url.indexOf('bed1LampStart=')+14, url.indexOf('bed1LampEnd=')-1);
+                var bed1LampEnd = url.substring(url.indexOf('bed1LampEnd=')+12, url.indexOf('bed2LampStart=')-1);
+                if(bed1LampStart == '' || bed1LampEnd == '') {
+                    document.getElementById("bed1LampStatus").innerHTML = "The bedroom #1 lamp is not configured!"
+                }
+                else {
+                    
+                    var startBed1Lamp = new Date();
+                    startBed1Lamp.setHours(bed1LampStart.substring(0, 2), bed1LampStart.substring(3, 5), 0);
+                    var endBed1Lamp = new Date();
+                    endBed1Lamp.setHours(bed1LampEnd.substring(0, 2), bed1LampEnd.substring(3, 5), 0);
+                    if(currentDate >= startBed1Lamp && currentDate <= endBed1Lamp) {
+                        document.getElementById("bed1LampStatus").innerHTML = "The bedroom #1 lamp is on!"
+                    }
+                    else {
+                        document.getElementById("bed1LampStatus").innerHTML = "The bedroom #1 lamp is off!"
+                    }
+                }
+
+                // Check bed 2 lamp status
+                var bed2LampStart = url.substring(url.indexOf('bed2LampStart=')+14, url.indexOf('bed2LampEnd=')-1);
+                var bed2LampEnd = url.substring(url.indexOf('bed2LampEnd=')+12, url.indexOf('bathroomFanStart=')-1);
+                if(bed2LampStart == '' || bed2LampEnd == '') {
+                    document.getElementById("bed2LampStatus").innerHTML = "The bedroom #2 lamp is not configured!"
+                }
+                else {
+                    
+                    var startBed2Lamp = new Date();
+                    startBed2Lamp.setHours(bed2LampStart.substring(0, 2), bed2LampStart.substring(3, 5), 0);
+                    var endBed2Lamp = new Date();
+                    endBed2Lamp.setHours(bed2LampEnd.substring(0, 2), bed2LampEnd.substring(3, 5), 0);
+                    if(currentDate >= startBed2Lamp && currentDate <= endBed2Lamp) {
+                        document.getElementById("bed2LampStatus").innerHTML = "The bedroom #2 lamp is on!"
+                    }
+                    else {
+                        document.getElementById("bed2LampStatus").innerHTML = "The bedroom #2 lamp is off!"
+                    }
+                }
+
+                // Check bathroom fan status
+                var bathroomFanStart = url.substring(url.indexOf('bathroomFanStart=')+17, url.indexOf('bathroomFanEnd=')-1);
+                var bathroomFanEnd = url.substring(url.indexOf('bathroomFanEnd=')+15, url.indexOf('washerStart=')-1);
+                if(bathroomFanStart == '' || bathroomFanEnd == '') {
+                    document.getElementById("bathroomFanStatus").innerHTML = "The bathroom fan is not configured!"
+                }
+                else {
+                    
+                    var startBathroomFan = new Date();
+                    startBathroomFan.setHours(bathroomFanStart.substring(0, 2), bathroomFanStart.substring(3, 5), 0);
+                    var endBathroomFan = new Date();
+                    endBathroomFan.setHours(bathroomFanEnd.substring(0, 2), bathroomFanEnd.substring(3, 5), 0);
+                    if(currentDate >= startBathroomFan && currentDate <= endBathroomFan) {
+                        document.getElementById("bathroomFanStatus").innerHTML = "The bathroom fan is on!"
+                    }
+                    else {
+                        document.getElementById("bathroomFanStatus").innerHTML = "The bathroom fan is off!"
+                    }
+                }
+
+                // Check washer status
+                var washerStart = url.substring(url.indexOf('washerStart=')+12, url.indexOf('washerEnd=')-1);
+                var washerEnd = url.substring(url.indexOf('washerEnd=')+10, url.indexOf('dryerStart=')-1);
+                if(washerStart == '' || washerEnd == '') {
+                    document.getElementById("washerStatus").innerHTML = "The washer is not configured!"
+                }
+                else {
+                    
+                    var startWasher = new Date();
+                    startWasher.setHours(washerStart.substring(0, 2), washerStart.substring(3, 5), 0);
+                    var endWasher = new Date();
+                    endWasher.setHours(washerEnd.substring(0, 2), washerEnd.substring(3, 5), 0);
+                    if(currentDate >= startWasher && currentDate <= endWasher) {
+                        document.getElementById("washerStatus").innerHTML = "The washer is on!"
+                    }
+                    else {
+                        document.getElementById("washerStatus").innerHTML = "The dryer is off!"
+                    }
+                }
+
+                // Check dryer status
+                var dryerStart = url.substring(url.indexOf('dryerStart=')+11, url.indexOf('dryerEnd=')-1);
+                var dryerEnd = url.substring(url.indexOf('dryerEnd=')+9, url.indexOf('frontDoorStart=')-1);
+                if(dryerStart == '' || dryerEnd == '') {
+                    document.getElementById("dryerStatus").innerHTML = "The dryer is not configured!"
+                }
+                else {
+                    
+                    var startDryer = new Date();
+                    startDryer.setHours(dryerStart.substring(0, 2), dryerStart.substring(3, 5), 0);
+                    var endDryer = new Date();
+                    endDryer.setHours(dryerEnd.substring(0, 2), dryerEnd.substring(3, 5), 0);
+                    if(currentDate >= startDryer && currentDate <= endDryer) {
+                        document.getElementById("dryerStatus").innerHTML = "The dryer is on!"
+                    }
+                    else {
+                        document.getElementById("dryerStatus").innerHTML = "The dryer is off!"
+                    }
+                }
+
+                // Check front door status
+                var frontDoorStart = url.substring(url.indexOf('frontDoorStart=')+15, url.indexOf('frontDoorEnd=')-1);
+                var frontDoorEnd = url.substring(url.indexOf('frontDoorEnd=')+13, url.indexOf('backDoorStart=')-1);
+                if(frontDoorStart == '' || frontDoorEnd == '') {
+                    document.getElementById("frontDoorStatus").innerHTML = "The front door is not configured!"
+                }
+                else {
+                    
+                    var startFrontDoor = new Date();
+                    startFrontDoor.setHours(frontDoorStart.substring(0, 2), frontDoorStart.substring(3, 5), 0);
+                    var endFrontDoor = new Date();
+                    endFrontDoor.setHours(frontDoorEnd.substring(0, 2), frontDoorEnd.substring(3, 5), 0);
+                    if(currentDate >= startFrontDoor && currentDate <= endFrontDoor) {
+                        document.getElementById("frontDoorStatus").innerHTML = "The front door is on!"
+                    }
+                    else {
+                        document.getElementById("frontDoorStatus").innerHTML = "The front door is off!"
+                    }
+                }
+
+                // Check back door status
+                var backDoorStart = url.substring(url.indexOf('backDoorStart=')+14, url.indexOf('backDoorEnd=')-1);
+                var backDoorEnd = url.substring(url.indexOf('backDoorEnd=')+12, url.indexOf('garageDoorStart=')-1);
+                if(backDoorStart == '' || backDoorEnd == '') {
+                    document.getElementById("backDoorStatus").innerHTML = "The back door is not configured!"
+                }
+                else {
+                    
+                    var startBackDoor = new Date();
+                    startBackDoor.setHours(backDoorStart.substring(0, 2), backDoorStart.substring(3, 5), 0);
+                    var endBackDoor = new Date();
+                    endBackDoor.setHours(backDoorEnd.substring(0, 2), backDoorEnd.substring(3, 5), 0);
+                    if(currentDate >= startBackDoor && currentDate <= endBackDoor) {
+                        document.getElementById("backDoorStatus").innerHTML = "The back door is on!"
+                    }
+                    else {
+                        document.getElementById("backDoorStatus").innerHTML = "The back door is off!"
+                    }
+                }
+
+                // Check garage door status
+                var garageDoorStart = url.substring(url.indexOf('garageDoorStart=')+16, url.indexOf('garageDoorEnd=')-1);
+                var garageDoorEnd = url.substring(url.indexOf('garageDoorEnd=')+14, url.indexOf('kitchenFanStart=')-1);
+                if(garageDoorStart == '' || garageDoorEnd == '') {
+                    document.getElementById("garageDoorStatus").innerHTML = "The garage door is not configured!"
+                }
+                else {
+                    
+                    var startGarageDoor = new Date();
+                    startGarageDoor.setHours(garageDoorStart.substring(0, 2), garageDoorStart.substring(3, 5), 0);
+                    var endGarageDoor = new Date();
+                    endGarageDoor.setHours(garageDoorEnd.substring(0, 2), garageDoorEnd.substring(3, 5), 0);
+                    if(currentDate >= startGarageDoor && currentDate <= endGarageDoor) {
+                        document.getElementById("garageDoorStatus").innerHTML = "The garage door is on!"
+                    }
+                    else {
+                        document.getElementById("garageDoorStatus").innerHTML = "The garage door is off!"
+                    }
+                }
+
+                // Check kitchen fan status
+                var kitchenFanStart = url.substring(url.indexOf('kitchenFanStart=')+16, url.indexOf('kitchenFanEnd=')-1);
+                var kitchenFanEnd = url.substring(url.indexOf('kitchenFanEnd=')+14, url.indexOf('diningLightStart=')-1);
+                if(kitchenFanStart == '' || kitchenFanEnd == '') {
+                    document.getElementById("kitchenFanStatus").innerHTML = "The kitchen fan is not configured!"
+                }
+                else {
+                    
+                    var startKitchenFan = new Date();
+                    startKitchenFan.setHours(kitchenFanStart.substring(0, 2), kitchenFanStart.substring(3, 5), 0);
+                    var endKitchenFan = new Date();
+                    endKitchenFan.setHours(kitchenFanEnd.substring(0, 2), kitchenFanEnd.substring(3, 5), 0);
+                    if(currentDate >= startKitchenFan && currentDate <= endKitchenFan) {
+                        document.getElementById("kitchenFanStatus").innerHTML = "The kitchen fan is on!"
+                    }
+                    else {
+                        document.getElementById("kitchenFanStatus").innerHTML = "The kitchen fan is off!"
+                    }
+                }
+
+                // Check dining room light status
+                var diningLightStart = url.substring(url.indexOf('diningLightStart=')+17, url.indexOf('diningLightEnd=')-1);
+                var diningLightEnd = url.substring(url.indexOf('diningLightEnd=')+15);
+                if(diningLightStart == '' || diningLightEnd == '') {
+                    document.getElementById("diningLightStatus").innerHTML = "The dining room light is not configured!"
+                }
+                else {
+                    
+                    var startDiningRoom = new Date();
+                    startDiningRoom.setHours(diningLightStart.substring(0, 2), diningLightStart.substring(3, 5), 0);
+                    var endDiningRoom = new Date();
+                    endDiningRoom.setHours(diningLightEnd.substring(0, 2), diningLightEnd.substring(3, 5), 0);
+                    if(currentDate >= startDiningRoom && currentDate <= endDiningRoom) {
+                        document.getElementById("diningLightStatus").innerHTML = "The dining room light is on!"
+                    }
+                    else {
+                        document.getElementById("diningLightStatus").innerHTML = "The dining room light is off!"
+                    }
+                }
+            }
+            setInterval(refreshStatus, 1000);
         </script>
     </head>
     <body>
+        <h1 id="myClock" name="myClock"></h1>
+        <p id="livingRoomLampStatus" name="livingRoomLampStatus"></p>
+        <p id="bed1LampStatus" name="bed1LampStatus"></p>
+        <p id="bed2LampStatus" name="bed2LampStatus"></p>
+        <p id="bathroomFanStatus" name="bathroomFanStatus"></p>
+        <p id="washerStatus" name="washerStatus"></p>
+        <p id="dryerStatus" name="dryerStatus"></p>
+        <p id="frontDoorStatus" name="frontDoorStatus"></p>
+        <p id="backDoorStatus" name="backDoorStatus"></p>
+        <p id="garageDoorStatus" name="garageDoorStatus"></p>
+        <p id="kitchenFanStatus" name="kitchenFanStatus"></p>
+        <p id="diningLightStatus" name="diningLightStatus"></p>
     </body>
 </html>
