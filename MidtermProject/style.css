@@ -19,3 +19,29 @@
     justify-content: center;
 }
 
+.statusIcon {
+    width: 64px;
+}
+
+.deviceLabel {
+    font-size: 1.5em;
+    font-family: Verdana;
+}
+
+.deviceStatusHeader {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: Verdana;
+}
+
+td {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+    font-family: Verdana;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
