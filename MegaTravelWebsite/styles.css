@@ -173,6 +173,12 @@ footer {
  .cancunDiv {
     display: none;
  }
+
+ #returnInfoDiv {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    text-align: center;
+ }
  
 
 @media only screen and (min-width: 575px) {
